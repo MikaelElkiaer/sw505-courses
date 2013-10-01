@@ -25,94 +25,83 @@
 \section{Beskrivelse af projekt}
 Projektet handler om udvikling af en metode til autonom mapping, vha. en LEGO\textregistered MINDSTORMS\textregistered NXT\textregistered-robot, med kendt position ved brug af en Microsoft\textregistered Kinect\textregistered til lokalisering.
 
-\section{Udviklingsmetode}
+\section{Kort beskrivelse af udviklingsmetode}
 Overordnet er der blevet valgt en modificeret udgave af SCRUM, med udvalgte elementer fra XP.
 
-\section{Begrundelse for valg af udviklingsmetode}
-\begin{figure}
-\centering
-\begin{tikzpicture}[scale=1]
-\path (0:0cm) coordinate (O); % define coordinate for origin
+\section{Den valgte udviklingsmetode}
+\input{boehms}
 
-  % draw the spiderweb
-  \foreach \X in {1,...,\D}{
-    \draw (\X*\A:0) -- (\X*\A:\R);
-  }
+\subsection{Boehms stjerne-model}
 
-  \foreach \Y in {0,...,\U}{
-    \foreach \X in {1,...,\D}{
-      \path (\X*\A:\Y*\R/\U) coordinate (D\X-\Y);
-      \fill (D\X-\Y) circle (1pt);
-    }
-    \draw [opacity=0.3] (0:\Y*\R/\U) \foreach \X in {1,...,\D}{
-        -- (\X*\A:\Y*\R/\U)
-    } -- cycle;
-  }
+Til at hjælpe med valg af udviklingsmetode er der taget udgangspunkt i Boehms stjerne-model.\cite{boehm}.
 
-  % define labels for each dimension axis (names config option)
-  \path (1*\A:\L) node (L1) {\tiny Security};
-  \path (2*\A:\L) node (L2) {\tiny Content Quality};
-  \path (3*\A:\L) node (L3) {\tiny Performance};
-  \path (4*\A:\L) node (L4) {\tiny Stability};
-  \path (5*\A:\L) node (L5) {\tiny Usability};
-  \path (6*\A:\L) node (L6) {\tiny Generality};
-  \path (7*\A:\L) node (L7) {\tiny Popularity};
+\begin{description}
+\item[Personnel]{Vi har vurderet projektgruppen til udelukkende at bestå af personer på niveau 2 eller derover.}
+\item[Dynamism]{Da vi arbejder problembaseret starter vi med nogle simple og konkrete krav, der i løbet af projektperioden formentlig kun vil ændre sig meget lidt.}
+\item[Culture]{Gruppens medlemmer har hver især vurderet hvor de ligger på skalaen (0-100 \%) og er kommet frem til et gennemsnit på 69,2 \%.}
+\item[Size]{Projektgruppen består af 6 personer.}
+\item[Criticality]{Da den robot, som er projektets mål, ikke skal sættes i produktion, vil den aldrig have højere betydning end \textbf{Comfort} på skalaen.}
+\end{description}
 
-  % for each sample case draw a path around the web along concrete values
-  % for the individual dimensions. Each node along the path is labeled
-  % with an identifier using the following scheme:
-  %
-  %   D<d>-<v>, dimension <d> a number between 1 and \D (#dimensions) and
-  %             value <v> a number between 0 and \U (#scale units)
-  %
-  % The paths will be drawn half-opaque, so that overlapping parts will be
-  % rendered in a composite color.
+Projektet er på \textbf{agile homeground} med \textbf{dynamism} som \textbf{risk factor}.
+Denne konklusion vil blive brugt til valg af udviklingsmetode og derved også hvilke eksisterende metoder der vil blive kigget på.
 
-  % Example Case 1 (red)
-  %
-  % D1 (Security): 0/7; D2 (Content Quality): 5/7; D3 (Performance): 0/7;
-  % D4 (Stability): 6/7; D5 (Usability): 0/7; D6 (Generality): 5/7;
-  % D7 (Popularity): 0/7
-  \draw [color=red,line width=1.5pt,opacity=0.5]
-    (D1-0) --
-    (D2-5) --
-    (D3-0) --
-    (D4-6) --
-    (D5-0) --
-    (D6-5) --
-    (D7-0) -- cycle;
+\subsection{Kig på eksisterende metoder}
+Til at finde en passende udviklingsmetode til projektgruppen er der kigget på følgende eksisterende agile metoder: SCRUM, XP og UP.\cite{larman}
 
-  % Example Case 2 (green)
-  %
-  % D1 (Security): 2/7; D2 (Content Quality): 2/7; D3 (Performance): 5/7;
-  % D4 (Stability): 1/7; D5 (Usability): 4/7; D6 (Generality): 1/7;
-  % D7 (Popularity): 7/7
-  \draw [color=green,line width=1.5pt,opacity=0.5]
-    (D1-2) --
-    (D2-2) --
-    (D3-5) --
-    (D4-1) --
-    (D5-4) --
-    (D6-1) --
-    (D7-7) -- cycle;
+\paragraph{SCRUM} stemmer godt overens med projektet, da den er meget fleksibel og nem at tilpasse.
 
-  % Example Case 3 (blue)
-  %
-  % D1 (Security): 1/7; D2 (Content Quality): 7/7; D3 (Performance): 4/7;
-  % D4 (Stability): 4/7; D5 (Usability): 3/7; D6 (Generality): 5/7;
-  % D7 (Popularity): 2/7
-  \draw [color=blue,line width=1.5pt,opacity=0.5]
-    (D1-1) --
-    (D2-7) --
-    (D3-4) --
-    (D4-4) --
-    (D5-3) --
-    (D6-5) --
-    (D7-2) -- cycle;
+\paragraph{XP} passer i mindre grad.
+Da vi har faste deadlines (projektaflevering), er idéen med flere releases ikke så relevant.
+Standup-meetings, som er utroligt korte møder, passer godt til software-udvikling, ikke så godt til rapport-skrivning.
 
-\end{tikzpicture}
-\end{figure}
+Dog har vi kigget på de enkelte \textbf{practices} og valgt nogle ud som er vurderet til at være brugbare.
 
-\section{Implementering af valgte udviklingsmetode}
+\paragraph{UP} er valgt helt fra.
+Dette skyldes at vi er et meget lille team med en meget \textbf{chaos}-orienteret \textbf{culture}.
+Der er derfor ikke brug for den slags strikse metoder og dokumentation, da der er i forvejen god vidensdeling og ingen udskiftninger i projektgruppen.
+
+\subsection{Vores metode}
+Vi har valgt at tage udgangspunkt i SCRUM, da den ligger godt op ad projektgruppens natur (ift. Boehms stjerne-model).
+I dette afsnit vil implementationen af vores udviklingsmetode blive præsenteret og hvor det er nødvendigt vil begrundelsen for et valg blive givet.
+
+\subsubsection{Roller}
+\begin{description}
+\item[Product owner]{Gruppen selv, med fokus på studieordningen}
+\item[Scrum master]{Denne rolle tildeles et nyt gruppemedlem i starten af et sprint (går på rotation).
+Opgaver for Scrum masteren består i at starte og lede morgen- og sprintmøder, at opdatere backlog og arbejdsplan.}
+\item[Team]{En fast gruppe på 6 mand, alle med evner til at udføre alle mulige arbejdsopgaver.
+Der vil ikke blive foretaget udskiftninger i projektforløbet.}
+\end{description}
+
+\subsubsection{Sprint}
+Der vil blive kørt sprints af længden: 1 uge.
+Dette menes som en uge i time-antal, for at tage højde for forelæsninger og andet der begrænser projekt-tiden i en given uge.
+
+\subsubsection{Morgenmøde}
+Hver morgen kl. 08.15 (såfremt der ikke er forelæsning) vil der blive holdt et morgenmøde, hvor der for hver gruppemedlem vil blive givet følgende status:
+\begin{enumerate}
+\item{Hvad lavede du i går?}
+\item{Hvad skal du lave i dag?}
+\item{Er der noget i vejen?}
+\end{enumerate}
+I forbindelse med dette opdaterer Scrum master arbejdsplanen.
+
+\subsubsection{Sprint planlægningsmøde}
+
+
+\subsubsection{Sprint vurdering}
+
+
+\begin{thebibliography}{9}
+
+\bibitem{boehm}
+  Boehm, B.; Turner, R., ''Observations on balancing discipline and agility'', Agile Development Conference, 2003.
+  ADC 2003. Proceedings of the , vol., no., pp.32,39, 25-28 June 2003
+  
+\bibitem{larman}
+Larman, Craig., ''Agile and Iterative Development: A Manager's Guide''.
+Addison-Wesley, 2004.
+\end{thebibliography}
 
 \end{document}
