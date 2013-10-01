@@ -1,0 +1,53 @@
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1]
+\path (0:0cm) coordinate (O); % define coordinate for origin
+
+  % draw the spiderweb
+  \foreach \X in {1,...,\D}{
+    \draw (\X*\A:0) -- (\X*\A:\R);
+  }
+
+  \foreach \Y in {0,...,\U}{
+    \foreach \X in {1,...,\D}{
+      \path (\X*\A:\Y*\R/\U) coordinate (D\X-\Y);
+      \fill (D\X-\Y) circle (1pt);
+    }
+    \draw [opacity=0.3] (0:\Y*\R/\U) \foreach \X in {1,...,\D}{
+        -- (\X*\A:\Y*\R/\U)
+    } -- cycle;
+  }
+
+  % define labels for each dimension axis (names config option)
+  \path (1*\A:\L) node (L1) {\tiny Personnel};
+  \path (2*\A:\L) node (L2) {\tiny Criticality};
+  \path (3*\A:\L) node (L3) {\tiny Size};
+  \path (4*\A:\L) node (L4) {\tiny Culture};
+  \path (5*\A:\L) node (L5) {\tiny Dynamism};
+
+  % for each sample case draw a path around the web along concrete values
+  % for the individual dimensions. Each node along the path is labeled
+  % with an identifier using the following scheme:
+  %
+  %   D<d>-<v>, dimension <d> a number between 1 and \D (#dimensions) and
+  %             value <v> a number between 0 and \U (#scale units)
+  %
+  % The paths will be drawn half-opaque, so that overlapping parts will be
+  % rendered in a composite color.
+
+  % Example Case 3 (blue)
+  %
+  % D1 (Security): 1/7; D2 (Content Quality): 7/7; D3 (Performance): 4/7;
+  % D4 (Stability): 4/7; D5 (Usability): 3/7; D6 (Generality): 5/7;
+  % D7 (Popularity): 2/7
+  \draw [color=blue,line width=1.5pt,opacity=0.5]
+    (D1-1) --
+    (D2-1) --
+    (D3-1) --
+    (D4-2) --
+    (D5-4) -- cycle;
+
+\end{tikzpicture}
+\caption{Boehms stjerne-model}
+\label{fig:boehms}
+\end{figure}
