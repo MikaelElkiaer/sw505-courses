@@ -39,16 +39,16 @@
   }
   
   \path (D5-T) node (L1) {\scriptsize Personnel};
-  \draw (D5-5) node[left] {\tiny 100};
-  \draw (D5-5) node[right] {\tiny 0};
-  \draw (D5-4) node[left] {\tiny 80};
-  \draw (D5-4) node[right] {\tiny 20};
-  \draw (D5-3) node[left] {\tiny 60};
-  \draw (D5-3) node[right] {\tiny 40};
-  \draw (D5-2) node[left] {\tiny 40};
-  \draw (D5-2) node[right] {\tiny 20};
-  \draw (D5-1) node[left] {\tiny 20};
-  \draw (D5-1) node[right] {\tiny 0};
+  \draw (D5-5) node[left] {\tiny (1A/1B) 100};
+  \draw (D5-5) node[right] {\tiny 0 (2/3)};
+  \draw (D5-4) node[left] {\tiny 75};
+  \draw (D5-4) node[right] {\tiny 25};
+  \draw (D5-3) node[left] {\tiny 50};
+  \draw (D5-3) node[right] {\tiny 50};
+  \draw (D5-2) node[left] {\tiny 25};
+  \draw (D5-2) node[right] {\tiny 75};
+  \draw (D5-1) node[left] {\tiny 0};
+  \draw (D5-1) node[right] {\tiny 100};
   
   \path (D4-T) node (L2) {\scriptsize Dynamism};
   \draw (D4-5) node[below] {\tiny 1};
@@ -79,11 +79,11 @@
   \draw (D1-1) node[below, align=center, font=\tiny] {Comfort};
     
   \draw [color=blue,line width=1.5pt,opacity=0.5]
-    (D1--15) --
+    (D1--10) --
     (D2--14) --
     (D3--15) --
-    (D4-4) --
-    (D5-1) -- cycle;
+    (D4--40) --
+    (D5--10) -- cycle;
 
 \end{tikzpicture}
 \caption{Boehms stjerne-model}
