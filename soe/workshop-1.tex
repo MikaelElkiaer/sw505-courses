@@ -41,21 +41,31 @@ Herunder gennemgås disse faktorer og der gives en vurdering af gruppen i relatio
 Gruppens vurderinger er plottet på \cref{boehms:stjerne}.
 \input{boehms}
 
-\begin{description}
-\item[Personnel]
-\textit{\small beskriver projektgruppens medlemmers ''niveau'' i relation til programmering.
-Denne inddeling sker efter Cockburns skala \cite[Tabel 2]{boehm}, der beskriver niveau i relation til det der skal produceres.
+{ %This curly bracket allows for local TeX commands
+\newcommand{\criteria}[3]
+{
+	\item[#1]
+	\textit{\small #2}
+	#3
 }
-Projektgruppens medlemmer har vurderet at alle gruppens medlemmer er på niveau 2 eller 3.
+\begin{description}
+\criteria{Personnel}{beskriver projektgruppens medlemmers ''niveau'' i relation til programmering.
+Denne inddeling sker efter Cockburns skala \cite[Tabel 2]{boehm}, der beskriver niveau i relation til det der skal produceres.}
+{Vi har i projektgruppen vurderet at alle gruppens medlemmer er på niveau 2 eller 3.}
 
-\item[Dynamism]{Da vi arbejder problembaseret starter vi med nogle simple og konkrete krav, der i løbet af projektperioden formentlig kun vil ændre sig meget lidt.}
+\criteria{Dynamism}{}
+{Da vi arbejder problembaseret starter vi med nogle simple og konkrete krav, der i løbet af projektperioden formentlig kun vil ændre sig meget lidt.}
 
-\item[Culture]{Gruppens medlemmer har hver især vurderet hvor de ligger på skalaen (0-100 \%) og er kommet frem til et gennemsnit på 69,2 \%.}
+\criteria{Culture}{}
+{Gruppens medlemmer har hver især vurderet hvor de ligger på skalaen (0-100 \%) og er kommet frem til et gennemsnit på 69,2 \%.}
 
-\item[Size]{Projektgruppen består af 6 personer.}
+\criteria{Size}{}
+{Projektgruppen består af 6 personer.}
 
-\item[Criticality]{Da den robot, som er projektets mål, ikke skal sættes i produktion, vil den aldrig have højere betydning end \textbf{Comfort} på skalaen.}
+\criteria{Criticality}{}
+{Da den robot, som er projektets mål, ikke skal sættes i produktion, vil den aldrig have højere betydning end \textbf{Comfort} på skalaen.}
 \end{description}
+}
 
 Projektet er på \textbf{agile homeground} med \textbf{dynamism} som \textbf{risk factor}.
 Denne konklusion vil blive brugt til valg af udviklingsmetode og derved også hvilke eksisterende metoder der vil blive kigget på.
