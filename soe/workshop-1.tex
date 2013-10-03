@@ -34,46 +34,7 @@ Dele af XP er derfor tilvalgt for at støtte op om metoden anvendt til programmer
 
 I det følgende afsnit vil vi beskrive de metoder vi har undersøgt, samt begrunde vores valg af metode.
 
-\subsection{Boehms stjerne-model}
-Til at hjælpe med valg af udviklingsmetode er der taget udgangspunkt i Boehms stjerne-model\cite{boehm}.
-Modellen beskriver projektgruppens arbejdsform ud fra fem faktorer.
-Herunder gennemgås disse faktorer og der gives en vurdering af gruppen i relation til disse.
-Gruppens vurderinger er plottet på \cref{boehms:stjerne}.
-\input{boehms_figure}
-
-{ %This curly bracket allows for local TeX commands
-\newcommand{\criteria}[3]
-{
-	\item[#1]
-	\textit{\small #2} --- #3
-}
-\begin{description}
-\criteria{Personnel}{beskriver projektgruppens medlemmers ''niveau'' i relation til programmering.
-Denne inddeling sker efter Cockburns skala \cite[Tabel 2]{boehm}, der beskriver niveau i relation til det der skal produceres.}
-{Vi har i projektgruppen vurderet at alle gruppens medlemmer er på niveau 2 eller 3.}
-
-\criteria{Dynamism}{angiver i hvilken grad det forventes at der opstår ændringer i et projekts kravspecifikation.
-Altså fortæller det i hvilken grad projektgruppen skal være i stand til at tilpasse sig forandringer i krav.}
-{Da vi arbejder problembaseret tager der udgangspunkt i nogle simple og konkrete krav, der i løbet af projektperioden kun vil blive yderligere præciseret.}
-
-\criteria{Culture}{er en vurdering af hvorvidt en projektgruppes medlemmer trives bedst med kaos eller orden.
-På skalaen angives ''hvor meget'' kaos gruppen trives med.}
-{Projektgruppens medlemmer har hver især vurderet hvor de ligger på skalaen.
-Gennemsnittet af disse vurderinger er på 69,2\%.}
-
-\criteria{Size}{udtaler sig udelukkende om størrelsen på det gruppe der skal arbejde på et projekt.}
-{Projektgruppen består af 6 personer.}
-
-\criteria{Criticality}{beskriver ''hvor vigtigt'' det er at det endelige produkt er fungerende og lever op til alle krav.
-Skalaen angiver denne vigtighed i form af hvilken effekt det har hvis dette ikke er tilfældet.}
-{Da den robot, som er projektets mål, ikke skal sættes i produktion, vil den aldrig have højere betydning end \textbf{Comfort} på skalaen.
-Det er naturligvis et mål for projektgruppen at have en fungerende robot ved semestrets afslutning.
-Men da den tekniske forståelse, som er et biprodukt af det udviklede, ligeledes udbygges vurderer vi det ikke som kritisk hvis robotten ikke er fuldt fungerende.}
-\end{description}
-}
-
-Projektet er på \textbf{agile homeground} med \textbf{dynamism} som \textbf{risk factor}.
-Denne konklusion vil blive brugt til valg af udviklingsmetode og derved også hvilke eksisterende metoder der vil blive kigget på.
+\input{boehms}
 
 \subsection{Kig på eksisterende metoder}
 Til at finde en passende udviklingsmetode til projektgruppen er der kigget på følgende eksisterende agile metoder: SCRUM, XP og UP.\cite{larman}
