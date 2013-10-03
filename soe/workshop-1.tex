@@ -45,8 +45,7 @@ Gruppens vurderinger er plottet på \cref{boehms:stjerne}.
 \newcommand{\criteria}[3]
 {
 	\item[#1]
-	\textit{\small #2}
-	#3
+	\textit{\small #2} #3
 }
 \begin{description}
 \criteria{Personnel}{beskriver projektgruppens medlemmers ''niveau'' i relation til programmering.
@@ -65,8 +64,11 @@ Gennemsnittet af disse vurderinger er på 69,2\%.}
 \criteria{Size}{udtaler sig udelukkende om størrelsen på det gruppe der skal arbejde på et projekt.}
 {Projektgruppen består af 6 personer.}
 
-\criteria{Criticality}{}
-{Da den robot, som er projektets mål, ikke skal sættes i produktion, vil den aldrig have højere betydning end \textbf{Comfort} på skalaen.}
+\criteria{Criticality}{beskriver ''hvor vigtigt'' det er at det endelige produkt er fungerende og lever op til alle krav.
+Skalaen angiver denne vigtighed i form af hvilken effekt det har hvis dette ikke er tilfældet.}
+{Da den robot, som er projektets mål, ikke skal sættes i produktion, vil den aldrig have højere betydning end \textbf{Comfort} på skalaen.
+Det er naturligvis et mål for projektgruppen at have en fungerende robot ved semestrets afslutning.
+Men da den tekniske forståelse, som er et biprodukt af det udviklede, ligeledes udbygges vurderer vi det ikke som kritisk hvis robotten ikke er fuldt fungerende.}
 \end{description}
 }
 
