@@ -1,53 +1,92 @@
+{
+\newcommand{\D}{5} % number of dimensions (config option)
+\newcommand{\U}{5} % number of scale units (config option)
+\newcommand{\UU}{50}
+
+\newdimen\R % maximal diagram radius (config option)
+\R=3.5cm 
+\newdimen\L % radius to put dimension labels (config option)
+\L=3.7cm
+
+\newcommand{\A}{360/\D} % calculated angle between dimension axes  
+
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=1]
-\path (0:0cm) coordinate (O); % define coordinate for origin
+  \path (0:0cm) coordinate (O); % define coordinate for origin
 
   % draw the spiderweb
   \foreach \X in {1,...,\D}{
-    \draw (\X*\A:0) -- (\X*\A:\R);
+    \draw (\X*\A+90:0) -- (\X*\A+90:\L);
   }
 
   \foreach \Y in {0,...,\U}{
     \foreach \X in {1,...,\D}{
-      \path (\X*\A:\Y*\R/\U) coordinate (D\X-\Y);
+      \path (\X*\A+90:\Y*\R/\U) coordinate (D\X-\Y);
       \fill (D\X-\Y) circle (1pt);
     }
-    \draw [opacity=0.3] (0:\Y*\R/\U) \foreach \X in {1,...,\D}{
-        -- (\X*\A:\Y*\R/\U)
-    } -- cycle;
+%    \draw [opacity=0.3] (90:\Y*\R/\U) \foreach \X in {1,...,\D}{
+%        -- (\X*\A+90:\Y*\R/\U)
+%    } -- cycle;
   }
-
-  % define labels for each dimension axis (names config option)
-  \path (1*\A:\L) node (L1) {\tiny Personnel};
-  \path (2*\A:\L) node (L2) {\tiny Criticality};
-  \path (3*\A:\L) node (L3) {\tiny Size};
-  \path (4*\A:\L) node (L4) {\tiny Culture};
-  \path (5*\A:\L) node (L5) {\tiny Dynamism};
-
-  % for each sample case draw a path around the web along concrete values
-  % for the individual dimensions. Each node along the path is labeled
-  % with an identifier using the following scheme:
-  %
-  %   D<d>-<v>, dimension <d> a number between 1 and \D (#dimensions) and
-  %             value <v> a number between 0 and \U (#scale units)
-  %
-  % The paths will be drawn half-opaque, so that overlapping parts will be
-  % rendered in a composite color.
-
-  % Example Case 3 (blue)
-  %
-  % D1 (Security): 1/7; D2 (Content Quality): 7/7; D3 (Performance): 4/7;
-  % D4 (Stability): 4/7; D5 (Usability): 3/7; D6 (Generality): 5/7;
-  % D7 (Popularity): 2/7
+  \foreach \X in {1,...,\D}{
+    \path (\X*\A+90:5.7*\R/\U) coordinate (D\X-T);
+  }
+  \foreach \Y in {0,...,\UU}{
+    \foreach \X in {1,...,\D}{
+      \path (\X*\A+90:\Y*\R/\UU) coordinate (D\X--\Y);
+    }
+  }
+  
+  \path (D5-T) node (L1) {\scriptsize Personnel};
+  \draw (D5-5) node[left] {\tiny 100};
+  \draw (D5-5) node[right] {\tiny 0};
+  \draw (D5-4) node[left] {\tiny 80};
+  \draw (D5-4) node[right] {\tiny 20};
+  \draw (D5-3) node[left] {\tiny 60};
+  \draw (D5-3) node[right] {\tiny 40};
+  \draw (D5-2) node[left] {\tiny 40};
+  \draw (D5-2) node[right] {\tiny 20};
+  \draw (D5-1) node[left] {\tiny 20};
+  \draw (D5-1) node[right] {\tiny 0};
+  
+  \path (D4-T) node (L2) {\scriptsize Dynamism};
+  \draw (D4-5) node[below] {\tiny 1};
+  \draw (D4-4) node[below] {\tiny 5};
+  \draw (D4-3) node[below] {\tiny 10};
+  \draw (D4-2) node[below] {\tiny 30};
+  \draw (D4-1) node[below] {\tiny 50};
+  
+  \path (D3-T) node (L3) {\scriptsize Culture};
+  \draw (D3-5) node[left] {\tiny 10};
+  \draw (D3-4) node[left] {\tiny 30};
+  \draw (D3-3) node[left] {\tiny 50};
+  \draw (D3-2) node[left] {\tiny 70};
+  \draw (D3-1) node[left] {\tiny 90};
+  
+  \path (D2-T) node (L4) {\scriptsize Size};
+  \draw (D2-5) node[right] {\tiny 300};
+  \draw (D2-4) node[right] {\tiny 100};
+  \draw (D2-3) node[right] {\tiny 30};
+  \draw (D2-2) node[right] {\tiny 10};
+  \draw (D2-1) node[right] {\tiny 3};
+  
+  \path (D1-T) node (L5) {\scriptsize Criticality};
+  \draw (D1-5) node[below, align=center, font=\tiny] {Many\\Lives};
+  \draw (D1-4) node[below, align=center, font=\tiny] {Single\\Life};
+  \draw (D1-3) node[below, align=center, font=\tiny] {Essential\\Funds};
+  \draw (D1-2) node[below, align=center, font=\tiny] {Discretionary\\Funds};
+  \draw (D1-1) node[below, align=center, font=\tiny] {Comfort};
+    
   \draw [color=blue,line width=1.5pt,opacity=0.5]
-    (D1-1) --
-    (D2-1) --
-    (D3-1) --
-    (D4-2) --
-    (D5-4) -- cycle;
+    (D1--15) --
+    (D2--14) --
+    (D3--15) --
+    (D4-4) --
+    (D5-1) -- cycle;
 
 \end{tikzpicture}
 \caption{Boehms stjerne-model}
 \label{boehms:stjerne}
 \end{figure}
+}
