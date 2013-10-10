@@ -22,8 +22,9 @@ Gruppen påtager sig selv rollen og foretager prioritering/vurdering ud fra studi
 {sørger for at gruppen arbejder produktivt, med udgangspunkt i SCRUM værdier.}
 {Denne rolle tildeles et nyt gruppemedlem i starten af hvert sprint, således at alle gruppens medlemmer på skift påtager sig rollen.
 Gruppen anvender denne model for at alle medlemmer kan forsøge sig i rollen.
-Scrum masterens opgave er at starte og lede morgen- og sprint- og vejledermøder.
-Til morgen- og sprintmøder har scrum master desuden til opgave at opdatere backlog og arbejdsplan.}
+
+
+Scrum masterens opgave er at starte og dirigere morgen- og sprint- og vejledermøder.}
 
 \info{Team}
 {beskriver det team der arbejder på et givent projekt og stiller en række krav til teamets medlemmer.}
@@ -32,23 +33,72 @@ Til morgen- og sprintmøder har scrum master desuden til opgave at opdatere backl
 
 \subsection{Ceremonier}
 
+Der vil blive kørt sprints af længden 1 uge.
+Dette menes som en uge i time-antal, for at tage højde for forelæsninger og andet der begrænser projekt-tiden i en given uge. 
+I løbet af et sprint vil følgende ceremonier være en del af dagligdagen.
 
-\subsection{Sprint}
-Der vil blive kørt sprints af længden: 1 uge.
-Dette menes som en uge i time-antal, for at tage højde for forelæsninger og andet der begrænser projekt-tiden i en given uge.
+\subsubsection{Estimeringsmøde}
+Først laves stories der samles i en backlog. 
+Disse stories skal beskrive de krav projektet har. 
+Disse stories prioriteres efter hvor vigtige de er for slutproduktet.
 
-\subsection{Morgenmøde}
+Der spilles planning poker om hver opgave.
+Hvis en story er for stor bliver den opdelt i mindre opgaver.
+Der spilles planning poker indtil alle opgaver vurderes til at kunne løses inden for rimelig tid. 
+\todo[inline]{er ``rimelig tid'' for uspecifik? ``2 dage'' bliver måske også for specifik}
+
+
+\subsubsection{Sprint planlægningsmøde}
+Sprint planlægningsmødet foregår inden hver sprint. 
+Det planlægges hvilke stories der tages med til den næste sprint. 
+Opgaver diskuteres så det er klart hvilke krav opgaven indeholder og hvornår opgaven er løst. 
+Der fås også et overblik over hvor færdig hver story er.
+\todo[inline]{Dette skal muligvis revideres når vi har prøvet det et par gange. Se \cite{checklist} s.6 - procedure}
+
+\subsubsection{Morgenmøde}
 Hver morgen kl. 08.15 (såfremt der ikke er forelæsning) vil der blive holdt et morgenmøde, hvor der for hver gruppemedlem vil blive givet følgende status:
 \begin{enumerate}
 \item{Hvad lavede du i går?}
 \item{Hvad skal du lave i dag?}
 \item{Er der noget i vejen?}
 \end{enumerate}
-I forbindelse med dette opdaterer Scrum master arbejdsplanen.
+I forbindelse med dette opdaterer hvert gruppemedlem scrumboardet.
 %Scrummaster stiller sig ved planen og opdaterer den
 
-\subsubsection{Sprint planlægningsmøde}
-
-
 \subsubsection{Sprint vurdering}
+Sprint vurdering indledes med at ridse op hvad det netop afsluttede sprint har gået ud på. 
+Hvert gruppemedlem fremlægger derefter kort de resultater de har opnået i sprintet.
+\todo[inline]{Dette skal muligvis revideres når vi har prøvet det et par gange. Se \cite{checklist} s.20 - procedure}
+
+\subsubsection{Fredagsmøde}
+Hver fredag foretages et fredagsmøde hvis formål er at identificere og udbedre eventuelle problemer socialt i gruppen.
+Fredagsmødet styres af scrum masteren, som følger en dagsorden, der blandt andet indeholder spørgsmål som ``Hvordan går det'' og ``konsruktiv kritik til andre gruppemedlemmer. 
+Fredagsmødet har samtidig til formål at være en afslappet og social afslutning på ugen. \todo[inline]{skal denne inkluderes? jeg synes det bliver for meget}
+
 }
+
+\subsection{Praksis fra XP}
+Som nævnt i \cref{ourmethod} har vi udvalgt nogle praksisser fra XP som vi vil benytte i forbindelse med programmeringsopgaver.
+Disse praksisser vil her blive beskrevet kort.
+
+\paragraph{Simpelt design}
+Ved løsning af en opgave vælges den simplest mulig løsning, så der fokuseres på at få løst kerneproblemet.
+
+\paragraph{Test}
+Projektet vil blive kørt testdrevet, så der skrives test inden opgave forsøges løst.
+
+\paragraph{Refaktorisering}
+Der vil løbende blive udført refaktoriset kode så dublikeret kode fjernes og koden generelt bliver forsimplet eller forbedret.
+
+\paragraph{Parprogrammering}
+Gruppen vil forsøge at bruge denne praksis i situationer hvor der er få programmeringsopgaver, men ikke som en generel praksis.
+
+\paragraph{Kollektivt ejerskab}
+Det er gruppens filosofi at alle ejer både kode og rapport, og alle kan derfor lave ændringer hvis det vurderes nødvendigt.
+
+\paragraph{Holdbart tempo}
+Sprints er bestemt til at vare en uge, for at holde et konsistent tempo. 
+Dette gør det også lettere at planlægge sprints.
+
+\paragraph{Kodestandarder}
+For at ensarte koden har gruppen fastsat en række kodestandarder der skal overholdes.
