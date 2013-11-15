@@ -1,4 +1,19 @@
-\section{Beskrivelse af udvalgte værktøjer og teknikker}
+\section{Udvalgte værktøjer og teknikker}
+Efter granskningen af SWOT analysen, som beskrevet i \cref{swot_analyse}, er det besluttet at vi vil fokusere på at arbejde med design patterns, da disse kan tilføje høj værdi i forhold til de problemer der er fundet med SWOT analysen.
+Da gruppen i forvejen kender til mange forskellige typer værktøjer og allerede har inddraget mange i projektarbejdet (elementer fra SCRUM, Xtreme Programming, Git versionsstyring m.m.), ses design patterns som en god udfordring, da det er et element som ikke før har været inddraget i udviklingsforløbet.
+Følgende afsnit (\cref{design_patterns_beskrivelse}) fokuserer således på at beskrive hvad design patterns er.
 
-\subsection{Design Patterns}
-måske en konklusion på swot analysen - hvorfor har vi valgt at arbejde med design patterns som det enesete?
+\subsection{Design Patterns}\label{design_patterns_beskrivelse}
+Som programmør er man alle forskellige; som også beskrevet i SWOT analysen er det nødvendigt at være opmærksom på f.eks. ''bad smells'' og andre forskelligheder (personlige præferencer) i forhold til hvordan der skrives kode.
+Design patterns dækker således over forskellige typer skabeloner som skal løse generelle problemer der opstår ved softwareudvikling, under forudsætning af en given kontekst.
+
+En sådan kontekst kan være mange forskellige ting; for eksempel:
+
+\begin{itemize}
+\item Et system som arbejder med én instans af en given klasse (singleton pattern).
+\item En teksteditor der ønsker undo/redo funktionalitet (memento/command pattern)
+\end{itemize}
+
+Tager vi udgangspunkt i memento, så giver det ikke en løsning (kode) til hvordan man implementerer undo/redo funktionalitet.
+Meningen er i stedet at tilføje en afprøvet (og kendt) struktur, så man ikke ender med en \textit{adhoc}-løsning af problemet.
+Denne struktur tilføjer især læsbarhed og gør koden nemmere at forstå, under forudsætning af at man kender det pågældende pattern.
